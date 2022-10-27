@@ -18,6 +18,14 @@
         <div id="logo">
             <img src="./img/logo.png" alt="logo">
         </div>
+        <div id="burger-menu">
+            <i id="burger-menu" class="bi bi-list"></i>
+        </div>
+        <ul id="nav-list-mobile">
+            <i id="close-icon" class="bi bi-x"></i>
+            <li class="nav-item"><a href="index.html">Accueil</a></li>
+            <li class="nav-item"><a href="#">Actualités</a></li>
+        </ul>
         <ul id="nav-list">
             <li class="nav-item"><a href="index.html">Accueil</a></li>
             <li class="nav-item"><a href="#">Actualités</a></li>
@@ -86,6 +94,9 @@
         let sun = document.getElementById("sun");
         let temple = document.getElementById("temple");
         let title = document.getElementById("title-group");
+        let closeIcon = document.getElementById("close-icon");
+        let burgerIcon = document.getElementById("burger-menu");
+        let mobileMenu = document.getElementById("nav-list-mobile");
         let animationDone = false;
 
         button.addEventListener("mouseenter", (e) => e.target.children[0].className = "bi bi-suit-heart-fill");
@@ -96,6 +107,10 @@
             temple.style.top = -15 + "%";
             title.style.opacity = 1;
         });
+
+        [burgerIcon, closeIcon].forEach(el => el.addEventListener("click", (e) => {
+            mobileMenu.classList.toggle("active");
+        }));
     </script>
 </body>
 
